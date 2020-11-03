@@ -1,0 +1,23 @@
+spring:
+  profiles: dev
+  cloud:
+    config:
+      enabled: false
+      allow-override: true
+      discovery:
+        enabled: false
+    bus:
+      enabled: false
+    consul:
+      discovery:
+        enabled: false
+        register: false
+      config:
+        enabled: false
+      enabled: false
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /

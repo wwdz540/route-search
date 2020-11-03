@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: rms-route
+  profiles:
+    active: dev
+
+

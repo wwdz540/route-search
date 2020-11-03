@@ -1,0 +1,17 @@
+#
+#参考：
+#https://docs.spring.io/spring-boot/docs/current/reference/
+#  html/howto-properties-and-configuration.html#howto-automatic-expansion
+#
+#https://www.jianshu.com/p/d5943e303a1f
+#这个配置是为了方便检查服务器上打包的版本是否一致
+info:
+  app:
+    profile: "${spring.profiles.active}"
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+    encoding: "@project.build.sourceEncoding@"
+    buildtime: "@maven.build.timestamp@"
+    java:
+      version: "@java.version@"

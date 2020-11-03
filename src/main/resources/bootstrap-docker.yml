@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    include: info
+  cloud:
+    consul:
+      host: ${HOST_IP}
+      port: 8500            # consule对外提供的端口
+      discovery:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+        tags: tms,profiles=${spring.profiles.active},buildtime=${info.app.buildtime}
+      config:
+        format: YAML
+        data-key: data
+        enabled: true
+server:
+  port: 8091
+management:
+  endpoint:
+    health:
+      show-details: always

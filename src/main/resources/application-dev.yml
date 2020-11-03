@@ -1,0 +1,34 @@
+logging:
+  level:
+    org.springframework: debug
+    com.shangqiao56.tms: debug
+
+shangqiao56:
+  user-holder: ##测试时配置的固定用户
+    type: fix  # fix|default-sys-user
+    fix:
+      user-name: wangzhiping
+      user-id: 12
+      stat-id: 15
+      stat-name: 上海转运站
+
+  ## 公共属性，测试机上存放于application键中的值
+  file-url:
+    upload-url: http://47.96.177.9:8081/FileService/file/upload/1
+    get-url: http://47.96.177.9:8081/FileService/file/getFileUrl/1
+  pda-manager:
+    server-url:  http://192.168.0.169:8082/pdaPull/api/
+    query-jobno-info: ${shangqiao56.pda-manager.server-url}/query
+    query-jobno-child: ${shangqiao56.pda-manager.server-url}/queryByscan
+    query-jobno-child-gather:  ${shangqiao56.pda-manager.server-url}/querydetail
+  tms:
+    datasource:
+      url:  jdbc:oracle:thin:@47.96.140.62:20400:LpSQLTst
+      #url:  jdbc:oracle:thin:@172.16.109.112:20400:LpSQLTst
+      username: dbora
+      password: intelink#LpSQLTst
+
+    redis:
+      host: 47.111.16.15
+      port: 6379
+      password: 123.Net
